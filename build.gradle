@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'code-quality'
+apply plugin: 'project-report'
+apply plugin: 'maven'
+
+sourceCompatibility = '1.6'
+version = '1.0-SNAPSHOT'
+group = 'exercise'
+
+ideaProject {
+    javaVersion='1.6'
+}
+
+repositories {
+    mavenRepo urls: "https://collaborate.bt.com/artefacts/content/groups/public"
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.8.2'
+}
