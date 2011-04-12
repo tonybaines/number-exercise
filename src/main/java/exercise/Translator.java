@@ -21,13 +21,6 @@ public class Translator {
         return DIGITS[i];
     }
 
-    private String translateThreeDigits(int i) {
-        if (i%100 == 0)
-            return translate(i/100) + " hundred";
-        else
-            return translate(i - i%100)+" and "+translate(i%100);
-    }
-
     private String translateTwoDigits(int i) {
         if (i%10 == 0)
             return TENS[i/10];
@@ -35,6 +28,13 @@ public class Translator {
             return translate(i - i%10)+" "+translate(i%10);
         else
             return TEENS[i-10];
+    }
+
+    private String translateThreeDigits(int i) {
+        if (i%100 == 0)
+            return translate(i/100) + " hundred";
+        else
+            return translate(i - i%100)+" and "+translate(i%100);
     }
 
 }
