@@ -38,9 +38,21 @@ public class TranslatorTest {
                 new String[]{"one hundred", "two hundred", "three hundred", "four hundred", "five hundred", "six hundred", "seven hundred", "eight hundred", "nine hundred"});
     }
 
-    @Test public void shouldTranslateNumbersBetweenOneHundredAndOneAndNineHundredAndNinetyNine() {
-        shouldTranslate(new int[]{101,999},
-                new String[]{"one hundred and one", "nine hundred and ninety nine"});
+    @Test
+    public void shouldTranslateNumbersBetweenOneHundredAndOneAndNineHundredAndNinetyNine() {
+        shouldTranslate(new int[]{101, 705, 999},
+                new String[]{"one hundred and one", "seven hundred and five", "nine hundred and ninety nine"});
+    }
+
+    @Test
+    public void shouldTranslateNumbersBetweenOneThousandAndNineHundredAndNinetyNineThousandNineHundredAndNinetyNine() {
+        shouldTranslate(new int[]{1000, 7001, 40020, 999999},
+                new String[]{"one thousand", "seven thousand and one", "forty thousand and twenty", "nine hundred and ninety nine thousand nine hundred and ninety nine"});
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrownAnExceptionIfTooLargeANumberIsPassedIn() {
+        translator.translate(1000000000);
     }
 
 
