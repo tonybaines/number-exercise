@@ -3,5 +3,8 @@
 .project
 .settings
 build
+exercise.iml
+exercise.ipr
+exercise.iws
 out
 rsqe.i??
