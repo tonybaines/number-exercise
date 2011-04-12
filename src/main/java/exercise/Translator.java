@@ -22,7 +22,10 @@ public class Translator {
     }
 
     private String translateThreeDigits(int i) {
-        return translate(i/100) + " hundred";
+        if (i%100 == 0)
+            return translate(i/100) + " hundred";
+        else
+            return translate(i - i%100)+" and "+translate(i%100);
     }
 
     private String translateTwoDigits(int i) {

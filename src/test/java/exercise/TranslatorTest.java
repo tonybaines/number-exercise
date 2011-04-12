@@ -38,6 +38,11 @@ public class TranslatorTest {
                 new String[]{"one hundred", "two hundred", "three hundred", "four hundred", "five hundred", "six hundred", "seven hundred", "eight hundred", "nine hundred"});
     }
 
+    @Test public void shouldTranslateNumbersBetweenOneHundredAndOneAndNineHundredAndNinetyNine() {
+        shouldTranslate(new int[]{101,999},
+                new String[]{"one hundred and one", "nine hundred and ninety nine"});
+    }
+
 
     private void shouldTranslate(int[] from, String[] to) {
         for (int i = 0; i < from.length; i++) {
