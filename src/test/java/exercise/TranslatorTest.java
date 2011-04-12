@@ -23,7 +23,7 @@ public class TranslatorTest {
         assertEquals("ten", translator.translate(10));
         assertEquals("twenty", translator.translate(20));
         assertEquals("thirty", translator.translate(30));
-        assertEquals("fourty", translator.translate(40));
+        assertEquals("forty", translator.translate(40));
         assertEquals("fifty", translator.translate(50));
         assertEquals("sixty", translator.translate(60));
         assertEquals("seventy", translator.translate(70));
@@ -45,5 +45,7 @@ public class TranslatorTest {
 
     @Test public void shouldTranslateNumbersBetweenTwentyOneAndNinetyNine() {
         assertEquals("twenty one", translator.translate(21));
+        assertEquals("thirty seven", translator.translate(37));
+        assertEquals("ninety nine", translator.translate(99));
     }
 }
