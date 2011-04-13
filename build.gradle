@@ -21,3 +21,16 @@ repositories {
 dependencies {
     testCompile 'junit:junit:4.8.2'
 }
+
+task packageSrc(type: Zip) {
+    description = 'Package up the source, build script and IDE definitions'
+    from 'src'
+    from 'build.gradle'
+    from ('.') {
+      include '*.i??'
+      include '.project'
+      include '.classpath'
+    }
+    archiveName='tony.baines_number-exercise.zip'
+}
+packageSrc.dependsOn idea, eclipse
